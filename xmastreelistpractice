@@ -1,0 +1,72 @@
+#This is to try using a list to make repeated actions take up fewer lines of code
+#For use with pihut's xmas tree. Currently untested program.
+
+from gpiozero import PWMLED
+from gpiozero import LED
+from time import sleep
+
+#the list of names that identify leds to gpio pins
+
+star = PWMLED(2)
+led18 = PWMLED(19)
+led5 = PWMLED(25)
+led11 = PWMLED(27)
+led10 = PWMLED(17)
+led21 = PWMLED(11)
+led9 = PWMLED(16)
+led12 = PWMLED(26)
+led14 = PWMLED(9)
+led20 = PWMLED(18)
+led1 = PWMLED(4)
+led7 = PWMLED(5)
+led6 = PWMLED(8)
+led3 = PWMLED(13)
+led24 = PWMLED(22)
+led13 = PWMLED(24)
+led2 = PWMLED(15)
+led15 = PWMLED(12)
+led16 = PWMLED(6)
+led17 = PWMLED(20)
+led4 = PWMLED(21)
+led8 = PWMLED(10)
+led23 = PWMLED(23)
+led19 = PWMLED(14)
+led22 = PWMLED(7)
+
+#This part makes a list called lights with all the leds as items in the list
+#The items in a list are automatically numbered 0,1,2,3...
+
+
+lights = ["led1", "led2", "led3", "led4", "led5", "led6", "led7", "led8", "led9", "led10", "led11", "led12", "led13", "led14", "led15", "led16", "led17", "led18", "led19", "led20", "led21", "led22", "led23", "led24", "star"]
+
+#This part calls each item on the list, starting with zero, and attaches the on() to it.
+
+n=0
+while n<25:
+    lights[n].on()
+    sleep(.5)
+    n = n+1
+
+#This part calls each item on the list, starting with zero, and attaches the on() to it.
+
+m=24
+while m>=0:
+    lights[m].off()
+    sleep(.5)
+    m = m - 1
+
+#This states that each item on the list is called light. Then it says that for every light in the list called lights, it will attach the on() to it one at a time.
+
+
+for light in lights:
+    light.on()
+    sleep(1)
+
+#This states that each item on the list is called light. Then it says that for every light in the list called light, it will attach the off() to it one at a time.
+
+
+for light in lights:
+    light.off()
+    sleep(1)
+  
+    
