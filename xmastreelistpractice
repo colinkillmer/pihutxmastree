@@ -1,5 +1,5 @@
 #This is to try using a list to make repeated actions take up fewer lines of code
-#For use with pihut's xmas tree. Currently untested program.
+#For use with pihut's xmas tree. Currently does not work.
 
 from gpiozero import PWMLED
 from gpiozero import LED
